@@ -116,6 +116,13 @@
     });
   }
 
+  // Captura busca vinda do Flask/URL ao carregar a página
+  const urlQuery = "{{ query }}";
+  if (urlQuery) {
+    input.value = urlQuery;
+    renderResults(urlQuery);
+  }
+
   input.addEventListener("input", () => renderResults(input.value));
   form.addEventListener("submit", (e) => {
     e.preventDefault();

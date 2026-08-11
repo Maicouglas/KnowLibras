@@ -35,7 +35,7 @@
       </a>
     </div>
 
-    <form class="search-form" role="search" action="{{ url_for('index') }}">
+    <form class="search-form" id="search-form" role="search" action="{{ url_for('index') }}" method="GET">
       <label for="search-input" class="sr-only" style="position:absolute;left:-9999px;">Buscar termo</label>
       <input id="search-input" name="q" type="text" placeholder="Digite o termo... (ex: SQL)" autocomplete="off">
       <button type="submit" aria-label="Buscar">
@@ -61,6 +61,15 @@
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 <script src="{{ url_for('static', filename='js/data.js') }}"></script>
 <script>
+  // Redireciona para os resultados na home ao buscar
+  document.getElementById("search-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const query = document.getElementById("search-input").value.trim();
+    if (query) {
+      window.location.href = "/?q=" + encodeURIComponent(query);
+    }
+  });
+
   const catId = getParam("cat");
   const categoria = KNOWLIBRAS_DATA[catId];
   const titleEl = document.getElementById("category-title");

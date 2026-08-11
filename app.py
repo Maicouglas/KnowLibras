@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    query = request.args.get('q', '')
+    return render_template('index.html', query=query)
 
 @app.route('/categoria')
 def categoria():
