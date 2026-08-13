@@ -8,11 +8,13 @@ const KNOWLIBRAS_DATA = {
     terms: {
       sql: {
         title: "SQL",
-        description: "Linguagem usada para consultar e manipular dados em bancos de dados relacionais."
+        description: "Linguagem usada para consultar e manipular dados em bancos de dados relacionais.",
+        fonte: "Canal Libras Tech no YouTube"
       },
       "chave-primaria": {
         title: "Chave Primária",
-        description: "Campo (ou conjunto de campos) que identifica de forma única cada registro em uma tabela."
+        description: "Campo (ou conjunto de campos) que identifica de forma única cada registro em uma tabela.",
+        fonte: "Instituto Federal X"
       }
     }
   },
@@ -21,11 +23,13 @@ const KNOWLIBRAS_DATA = {
     terms: {
       variavel: {
         title: "Variável",
-        description: "Espaço na memória usado para armazenar um valor que pode mudar durante a execução do programa."
+        description: "Espaço na memória usado para armazenar um valor que pode mudar durante a execução do programa.",
+        fonte: "Canal Libras Tech no YouTube"
       },
       funcao: {
         title: "Função",
         description: "Bloco de código reutilizável que executa uma tarefa específica quando chamado."
+        // sem "fonte" aqui de propósito, pra você ver como fica o aviso padrão
       }
     }
   },
@@ -34,7 +38,8 @@ const KNOWLIBRAS_DATA = {
     terms: {
       html: {
         title: "HTML",
-        description: "Linguagem de marcação usada para estruturar o conteúdo de páginas web."
+        description: "Linguagem de marcação usada para estruturar o conteúdo de páginas web.",
+        fonte: "W3C Libras"
       }
     }
   }

@@ -85,6 +85,16 @@
       <path d="M8 5.5V18.5L19 12L8 5.5Z" fill="currentColor"/>
     </svg>`;
 
+  // Monta o HTML de crédito/fonte do vídeo do SINAL (a explicação não leva fonte).
+  // termo.fonte é uma string simples com o nome do canal/instituto.
+  // Se não houver termo.fonte definido, mostra um aviso padrão.
+  function renderFonte(fonte) {
+    if (!fonte) {
+      return `<p class="video-source video-source--missing">Fonte do vídeo não informada.</p>`;
+    }
+    return `<p class="video-source">Fonte: ${fonte}</p>`;
+  }
+
   if (!termo) {
     content.innerHTML = `<p class="empty-state">Termo não encontrado. Volte e escolha um termo válido.</p>`;
   } else {
@@ -97,6 +107,7 @@
             ${playIcon}
           </button>
         </div>
+        ${renderFonte(termo.fonte)}
       </section>
 
       <section class="video-block">
