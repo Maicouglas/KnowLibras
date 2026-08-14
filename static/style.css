@@ -226,3 +226,7 @@ footer {
 .video-source {
   text-align: center;
 }
+
+.video-unavailable{
+  color: #FFFFFF;
+}
