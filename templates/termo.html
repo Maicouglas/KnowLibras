@@ -92,7 +92,7 @@
       "/video/upload/f_mp4,vc_h264,ac_aac,q_auto:good,w_1920/"
     )
   : url;
-  
+
     return `<div class="video-frame" id="frame-${uid}" style="position:relative;background:#1d4ed8;aspect-ratio:16/9;overflow:hidden;border-radius:8px;">
       <button class="play-btn" onclick="tocarVideo('${uid}', '${embed}')" aria-label="Reproduzir ${label}"
         style="position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:transparent;border:none;cursor:pointer;padding:0;">
@@ -103,21 +103,27 @@
     </div>`;
   }
 
-  // Chamada pelo botão de play: troca a capa azul pelo iframe/video de fato.
+// Chamada pelo botão de play: troca a capa azul pelo vídeo.
 window.tocarVideo = function(uid, embed) {
   const frame = document.getElementById(`frame-${uid}`);
   if (!frame) return;
 
   frame.innerHTML = `
-    <video controls muted playsinline preload="metadata"
+    <video controls muted playsinline preload="auto"
       controlsList="nodownload"
       width="100%" height="100%"
       style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;"
-      src="${embed}">
+    >
+      <source src="${embed}" type="video/mp4">
     </video>
   `;
-};
 
+  const video = frame.querySelector("video");
+
+  video.play().catch(error => {
+    console.log("O vídeo precisa de um novo toque:", error);
+  });
+};
   // Monta o HTML de crédito/fonte do vídeo do SINAL (a explicação não leva fonte).
   // termo.fonte é uma string simples com o nome do canal/instituto.
   // Se não houver termo.fonte definido, mostra um aviso padrão.
