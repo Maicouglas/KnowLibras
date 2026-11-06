@@ -1,8 +1,8 @@
-// KNOWLIBRAS — dados de exemplo (PLACEHOLDER)
+// LUSSLIBRAS — dados de exemplo (PLACEHOLDER)
 // Isto é só um exemplo pra você testar o site.
 // Troque pelo seu data.js real com todos os termos/categorias.
 
-const KNOWLIBRAS_DATA = {
+const LUSSLIBRAS_DATA = {
   bd: {
     label: "Banco de Dados",
     terms: {

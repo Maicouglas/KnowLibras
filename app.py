@@ -27,10 +27,10 @@ def data_js():
     Gera o data.js dinamicamente a partir do MySQL, no lugar do
     arquivo estático antigo. O front-end (script.js, index.html,
     categoria.html, termo.html) continua igual, pois o resultado
-    final ainda é: const KNOWLIBRAS_DATA = {...};
+    final ainda é: const LUSSLIBRAS_DATA = {...};
     """
     dados = buscar_dados_glossario()
-    conteudo = f"const KNOWLIBRAS_DATA = {json.dumps(dados, ensure_ascii=False)};"
+    conteudo = f"const LUSSLIBRAS_DATA = {json.dumps(dados, ensure_ascii=False)};"
     return Response(conteudo, mimetype='application/javascript')
 
 

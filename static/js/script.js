@@ -1,4 +1,4 @@
-// KNOWLIBRAS — funções utilitárias compartilhadas entre as páginas
+// LUSSLIBRAS — funções utilitárias compartilhadas entre as páginas
 // Usado por: index.html, categoria.html, termo.html
 
 /**
@@ -22,7 +22,7 @@ function normalizar(texto) {
 }
 
 /**
- * Busca termos pelo título em todas as categorias de KNOWLIBRAS_DATA.
+ * Busca termos pelo título em todas as categorias de LUSSLIBRAS_DATA.
  * Retorna uma lista de objetos { catId, termId, title }
  */
 function buscarTermos(query) {
@@ -31,7 +31,7 @@ function buscarTermos(query) {
 
   if (!termoBusca) return resultados;
 
-  Object.entries(KNOWLIBRAS_DATA).forEach(([catId, categoria]) => {
+  Object.entries(LUSSLIBRAS_DATA).forEach(([catId, categoria]) => {
     Object.entries(categoria.terms).forEach(([termId, termo]) => {
       if (normalizar(termo.title).includes(termoBusca)) {
         resultados.push({ catId, termId, title: termo.title });
