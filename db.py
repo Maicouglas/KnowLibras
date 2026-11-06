@@ -14,9 +14,12 @@ def get_connection():
     try:
         conn = mysql.connector.connect(
             host=os.getenv("DB_HOST"),
+            port=int(os.getenv("DB_PORT", "4000")),
             user=os.getenv("DB_USER"),
             password=os.getenv("DB_PASSWORD"),
-            database=os.getenv("DB_NAME")
+            database=os.getenv("DB_NAME"),
+            ssl_ca=os.path.join(os.path.dirname(__file__), "isrgrootx1.pem"),
+            ssl_verify_cert=True
         )
         return conn
     except Error as e:
