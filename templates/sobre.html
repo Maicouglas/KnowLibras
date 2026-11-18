@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LussLibras — Sobre</title>
+
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="app-shell">
+
+  <header class="site-header">
+    <div class="header-top">
+      <a href="{{ url_for('index') }}" class="brand" style="text-decoration:none;">
+        <img src="{{ url_for('static', filename='Logo_LussLibras.png') }}" alt="LussLibras Logo" class="brand-logo">
+      </a>
+
+      <a href="{{ url_for('index') }}" class="back-link" aria-label="Início">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <form class="search-form" id="search-form" role="search" action="{{ url_for('index') }}" method="GET">
+      <label for="search-input" class="sr-only" style="position:absolute;left:-9999px;">Buscar termo</label>
+      <input id="search-input" name="q" type="text" placeholder="Digite o termo... (ex: SQL)" autocomplete="off">
+      <button type="submit" aria-label="Buscar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </form>
+  </header>
+
+  <main>
+    <h1 class="page-title" style="text-align: center;">Sobre o LussLibras</h1>
+
+    <section style="color: #1A1A1A; line-height: 1.7;">
+
+      <p>O <strong style="color: #1971C2;">LussLibras</strong> é um glossário de termos técnicos da área de <strong style="color: #1971C2;">Tecnologia da Informação (TI)</strong> em <strong style="color: #1971C2;">Língua Brasileira de Sinais (Libras)</strong>.</p>
+
+      <br>
+
+      <p>O projeto foi desenvolvido por <strong style="color: #1971C2;">Maicon Douglas Lopes Lussanrriaga</strong>, estudante de <strong style="color: #1971C2;">Sistemas de Informação</strong> da <strong style="color: #1971C2;">Universidade Federal do Rio Grande (FURG)</strong>.</p>
+
+      <br>
+
+      <p>A ideia surgiu da minha experiência como <strong style="color: #1971C2;">estudante surdo</strong>, ao perceber a dificuldade de encontrar sinais de termos técnicos de TI organizados e de fácil acesso.</p>
+
+      <br>
+
+      <p>O objetivo do LussLibras é facilitar a <strong style="color: #1971C2;">consulta e a compreensão</strong> desses termos por estudantes surdos e intérpretes de Libras.</p>
+
+      <br>
+
+      <p>Cada termo apresenta sua <strong style="color: #1971C2;">descrição em português</strong>, o <strong style="color: #1971C2;">vídeo do sinal em Libras</strong> e o <strong style="color: #1971C2;">vídeo com a explicação do conceito em Libras</strong>. Os conteúdos também são organizados por categorias para facilitar a pesquisa.</p>
+
+      <br>
+
+      <p>O LussLibras pode ser acessado pelo <strong style="color: #1971C2;">navegador</strong>, sem precisar instalar um aplicativo.</p>
+
+      <br>
+
+      <p style="text-align: center; color: #1971C2;">
+        <strong>LussLibras: tecnologia, conhecimento e acessibilidade em Libras.</strong>
+      </p>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    &copy; 2026 · Desenvolvido por Maicon Lussanrriaga ·
+    <a href="{{ url_for('sobre') }}"> Sobre</a>
+  </footer>
+
+</div>
+</body>
+</html>
