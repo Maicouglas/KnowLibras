@@ -20,6 +20,9 @@ def categoria():
 def termo():
     return render_template('termo.html')
 
+@app.route('/sobre')
+def sobre():
+    return render_template('sobre.html')
 
 @app.route('/static/js/data.js')
 def data_js():
